@@ -11,10 +11,9 @@ const options: swaggerJsdoc.Options = {
       description: "A full-featured Airbnb-like REST API with authentication, listings, bookings, and file uploads.",
     },
     servers: [
-      {
-        url: "http://localhost:3000",
-      },
-    ],
+  { url: "https://airbnb-api-h7pm.onrender.com" },
+  { url: "http://localhost:3000" }
+]
     components: {
       securitySchemes: {
         bearerAuth: {
