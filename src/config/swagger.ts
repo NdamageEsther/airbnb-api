@@ -12,8 +12,9 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       { url: "https://airbnb-api-h7pm.onrender.com", description: "Production server" },
-      { url: "http://localhost:3000", description: "Local server" }
+      { url: "http://localhost:3000/api/v1", description: "Local server" }
     ],
+    
     components: {
       securitySchemes: {
         bearerAuth: {
