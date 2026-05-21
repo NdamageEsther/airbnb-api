@@ -3,6 +3,15 @@ import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env["JWT_SECRET"] as string;
 
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: string;
+      role?: string;
+    }
+  }
+}
+
 export const authenticate = (req: Request, res: Response, next: NextFunction): void => {
   try {
     const authHeader = req.headers["authorization"];
@@ -52,4 +61,7 @@ export const requireAdmin = (req: Request, res: Response, next: NextFunction): v
   res.status(403).json({ error: "Admins only" });
 };
 
-export interface AuthRequest extends Request {}
+export interface AuthRequest extends Request {
+  userId?: string;
+  role?: string;
+}

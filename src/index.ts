@@ -13,6 +13,7 @@ import bookingsRouter from "./routes/bookings.routes";
 import uploadRouter from "./routes/upload.routes";
 import reviewsRouter from "./routes/reviews.routes";
 import { errorHandler } from "./middlewares/errorHandler";
+import aiRouter from "./routes/ai.routes";
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use("/api/v1/users", deprecateV1, usersRouter);
 app.use("/api/v1/listings", deprecateV1, listingsRouter);
 app.use("/api/v1/bookings", deprecateV1, bookingsRouter);
 app.use("/api/v1/reviews", deprecateV1, reviewsRouter);
+app.use("/api/v1/ai", aiRouter);
 app.use("/", uploadRouter);
 
 app.use((req: Request, res: Response) => {
